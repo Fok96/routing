@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <h1>Pseudo Shop</h1>
+            <button (click)="makeItAssasin()" class='btn btn-outline-primary' >Assasin</button>
+            <button (click)="makeItLost()" class='btn btn-outline-primary' >Lost</button>
+
+
+        </div>
+        <div class="col-6">
+            <h1>Where we are</h1>
+            <agm-map 
+            [styles]="mapStyle" [latitude]="center.lat" [longitude]="center.lng" [zoom]="mapZoom">
+            
+                <agm-marker *ngFor="let dep of departments" 
+                    [latitude]="dep.coordinates.lat"
+                    [longitude]="dep.coordinates.lng">
+
+
+
+
+                    <agm-info-window>
+                        {{dep.title}}
+                    </agm-info-window>
+
+
+                </agm-marker>
+
+            </agm-map>
+        </div>
+    </div>
+
+
+</div>
