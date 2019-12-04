@@ -1,1 +1,44 @@
 <p>products works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-center">
+                Best Offers
+
+            </h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3" *ngFor="let p of products">
+            <a [routerLink]="'/product/'+p._id">
+                    <img [src]="p.photo" class="img-fluid product-image"/>
+                    {{p.name}}
+            </a>
+            
+            
+       
+            
+        </div>
+    </div>    
+    <div class="row">
+        <div class="col-3" *ngFor="let p of products">
+           
+            <h4 [class.lt]=p.sale>{{p.price }}&euro;</h4>
+            
+       
+            
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3" *ngFor="let p of products">
+            <h2 *ngIf="p.sale" >SALEEEEEEE !!!</h2> 
+            <h1 *ngIf="p.sale">{{p.sale }}&euro;</h1>
+            <button class="btn btn-danger btn-block">Buy Now</button>
+            
+       
+            
+        </div>
+        
+    </div>
+    
+</div>
